@@ -12,28 +12,35 @@ Vibe coding quickstart workspace.
 - pip: `pip --version`
 - uv: `uv --version`
 
-## Start options
+## Quick start
 
-### Node project
-
-```bash
-npm init -y
-```
-
-or
+### Run both apps
 
 ```bash
-pnpm init
+npm install
+npm run dev
 ```
 
-### Python project
+- Frontend: `http://localhost:5173`
+- Backend: `http://127.0.0.1:8000`
+- Health check: `http://127.0.0.1:8000/health`
+
+### Run separately
 
 ```bash
-uv venv
+npm run dev:frontend
 ```
 
-Activate on PowerShell:
-
-```powershell
-.\.venv\Scripts\Activate.ps1
+```bash
+npm run dev:backend
 ```
+
+### Local checks
+
+```bash
+npm run check
+```
+
+### Backend env
+
+Copy `backend/.env.example` to `backend/.env` and edit if needed.

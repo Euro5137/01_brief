@@ -1,0 +1,16 @@
+{
+  "name": "01_brief",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "uv run --directory backend uvicorn main:app --reload --host 127.0.0.1 --port 8000",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "build": "npm --prefix frontend run build",
+    "check:backend": "uv run --directory backend python -c \"from main import app; print(app.title)\"",
+    "check": "npm run build && npm run check:backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
